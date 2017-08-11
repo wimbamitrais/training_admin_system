@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../resources/css/bootstrap-theme.min.css" rel="stylesheet">
+	<script src="../resources/js/jquery.min.js"></script>
+	<script src="../resources/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		@icon-font-path:          "../resources/fonts/";
+		@icon-font-name:          "glyphicons-halflings-regular";
+		@icon-font-svg-id:        "glyphicons_halflingsregular";
+		/* 
+		html5doctor.com Reset Stylesheet
+		v1.6.1
+		Last Updated: 2010-09-17
+		Author: Richard Clark - http://richclarkdesign.com 
+		Twitter: @rich_clark
+		*/
+		html, body, div, span, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		abbr, address, cite, code,
+		del, dfn, em, img, ins, kbd, q, samp,
+		small, strong, sub, sup, var,
+		b, i,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section, summary,
+		time, mark, audio, video {
+			margin:0;
+			padding:0;
+			border:0;
+			outline:0;
+			font-size:100%;
+			vertical-align:baseline;
+			background:transparent;
+		}
+		body {
+			line-height:1;
+			font-family:IndieFlower;
+		}
+		article,aside,details,figcaption,figure,
+		footer,header,hgroup,menu,nav,section { 
+			display:block;
+		}
+		nav ul {
+			list-style:none;
+		}
+		blockquote, q {
+			quotes:none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content:'';
+			content:none;
+		}
+		a {
+			margin:0;
+			padding:0;
+			font-size:100%;
+			vertical-align:baseline;
+			background:transparent;
+		}
+		/* change colours to suit your needs */
+		ins {
+			background-color:#ff9;
+			color:#000;
+			text-decoration:none;
+		}
+		/* change colours to suit your needs */
+		mark {
+			background-color:#ff9;
+			color:#000; 
+			font-style:italic;
+			font-weight:bold;
+		}
+		del {
+			text-decoration: line-through;
+		}
+		abbr[title], dfn[title] {
+			border-bottom:1px dotted;
+			cursor:help;
+		}
+		table {
+			border-collapse:collapse;
+			border-spacing:0;
+		}
+		/* change border colour to suit your needs */
+		hr {
+			display:block;
+			height:1px;
+			border:0;   
+			border-top:1px solid #cccccc;
+			margin:1em 0;
+			padding:0;
+		}
+		input, select {
+			vertical-align:middle;
+		}
+		.divExplanation1 {
+			border: 1px solid red;
+			margin:10px;
+			width:98.9%;
+			height:100px;
+			text-align:center;
+		}
+		.divExplanationInside1 {
+			border: 1px solid purple;
+			margin-top:15px;
+			margin-left:10px;
+			width:98.2%;
+			height:30px;
+			text-align:center;
+		}
+		.divExplanation2 {
+			border: 1px dashed green;
+			margin:10px;
+			width:99%;
+			height:400px;
+			text-align:center;
+		}
+		.divExplanationInside2 {
+			border: 1px dashed green;
+			margin:10px;
+			width:20%;
+			height:380px;
+			text-align:center;
+			float:left;
+		}
+		.divExplanationInside22 {
+			border: 1px dashed green;
+			margin:10px;
+			width:55%;
+			height:380px;
+			text-align:center;
+			float:left;
+		}
+		.divExplanationInside23 {
+			border: 1px dashed green;
+			margin:10px;
+			width:20%;
+			height:380px;
+			text-align:center;
+			float:left;
+		}
+		.divExplanation3 {
+			border: 1px dotted blue;
+			margin:10px;
+			width:99%;
+			height:100px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+<form>
+<section>
+<header>
+<div class="divExplanation1">
+<p style="margin-top:20px;text-align:left;margin-left:20px;font-size:27px;font-family:IndieFlower"><b>Hello World</b></p>
+<div class="divExplanationInside1">
+	<ul style="top:10px;position:relative;width:60%;margin-left:308px;list-style-type: none;">
+		<li style="text-align:left;float:left">Tour</li>
+		<li style="text-align:left;float:left;margin-left:20%">Shop</li>
+		<li style="text-align:left;float:left;margin-left:20%">Collection</li>
+		<li style="text-align:left;float:left;margin-left:20%">About</li>
+	</ul>
+</div>
+</div>
+</header>
+</section>
+<div class="divExplanation2">
+<div class="divExplanationInside2">
+</div>
+<div class="divExplanationInside22">
+<table class="table">
+	<tr>
+		<td style="text-align:left;">Nama</td>
+		<td>:</td>
+		<td style="text-align:left;"><input class="form-control" type="text" id="txtName" placeholder="Nama" /></td>
+	</tr>
+	<tr>
+		<td style="text-align:left;">Nama Lengkap</td>
+		<td>:</td>
+		<td style="text-align:left;"><input class="form-control" type="text" id="txtNameLengkap" placeholder="Nama Lengkap" /></td>
+	</tr>
+	<tr>
+		<td style="text-align:left;">
+			Tanggal Lahir
+		</td>
+		<td>:</td>
+		<td>
+			<div class="input-group date">
+			<input class="form-control" type="text" placeholder="Tanggal Lahir" id="txtTglLahir" />
+			<span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:left">
+			No Telephone
+		</td>
+		<td>:</td>
+		<td><input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input"></td>
+	<tr>
+		<td style="text-align:left;">Alamat</td>
+		<td>:</td>
+		<td><textarea class="form-control" rows="4" cols="30" placeholder="Alamat"></textarea></td>
+	</tr>
+	<tr>
+		<td colspan="3" style="text-align:right;"><input class="btn btn-primary" type="button" value="submit" /></td>
+	</tr>
+</table>
+</div>
+<div class="divExplanationInside23">
+</div>
+</div>
+<section>
+<footer>
+<div class="divExplanation3">
+</div>
+</footer>
+</section>
+</form>
+</body>
+</html>

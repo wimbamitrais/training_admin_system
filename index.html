@@ -1,6 +1,69 @@
+<!DOCTYPE html>
 <html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["email"].value;
+	var y = document.forms["myForm"]["passwordText"].value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+	if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+	if(y == "") {
+        alert("You didn't enter a password.\n");
+        return false;
+	}
+	if (y.length < 6) {
+        alert("The password at least have 6 character. \n");
+        return false;
+ 
+    }
+	if ( (y.search(/[a-zA-Z]+/)==-1) || (y.search(/[0-9]+/)==-1) ) {
+        alert("The password must contain at least one numeral.\n");
+        return false;
+ 
+    }
+}
+</script>
+</head>
 <body>
-Training : Training Admin System <br />
-Description : Training Admin System is a system used for administrative task of all company trainings.
+<form name="myForm" action="Feature3.html" onsubmit="return validateForm();" method="post">
+<table>
+	<tr>
+		<td>
+			Email
+		</td>
+		<td>
+			:
+		</td>
+		<td>
+			<input type="text" name="email" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Password
+		</td>
+		<td>
+			:
+		</td>
+		<td>
+			<input type="password" name="passwordText" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="text-align:right">
+			<input type="submit" value="Submit" />
+		</td>
+	</tr>
+</table>
+</form>
 </body>
 </html>

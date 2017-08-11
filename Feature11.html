@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+<table>
+	<tr>
+		<td>
+			Name
+		</td>
+		<td>
+			:
+		</td>
+		<td>
+			<input type="text" name="textName" onfocus="myFunction(this)" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Hobby
+		</td>
+		<td>
+			:
+		</td>
+		<td>
+			<input type="text" name="textInput1" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="text-align:right">
+			<input type="submit" id="sbmtValue" value="Submit" />
+		</td>
+	</tr>
+</table>
+<script>
+function myFunction(x) {
+    x.disabled = true;
+}
+</script>
+</body>
+</html>

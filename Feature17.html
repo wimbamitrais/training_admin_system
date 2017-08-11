@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function multiply() {
+    var x = document.getElementById("num1").value;
+    var y = document.getElementById("num2").value;
+    if (x == "") {
+        alert("Number 1 must be filled out");
+        return false;
+    } else if (y == ""){
+    	alert("Number 2 must be filled out");
+        return false;
+    } else {
+		document.getElementById("result").innerHTML = "The result is = " + x*y;
+    }
+} 
+</script>
+</head>
+<body>
+
+	Number 1: <input type="text" id="num1"> <br>
+	Number 2: <input type="text" id="num2">
+	<input type="submit" value="Multiply" onclick="return multiply()">
+
+	<br>
+	<p id="result"></p>
+</body>
+</html>

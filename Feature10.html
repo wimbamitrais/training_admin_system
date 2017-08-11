@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Get some value from JSON format</h2>
+
+
+<b>Name:</b>
+<p id="name"></p>
+<b>Age:</b>
+<p id="age"></p>
+<b>Location:</b>
+<p id="city"></p>
+
+<script>
+
+var myJSON = '{ "name":"Wimba Agra Wicesa", "age":23, "city":"Denpasar" }';
+var myObj = JSON.parse(myJSON);
+document.getElementById("name").innerHTML = myObj.name;
+document.getElementById("age").innerHTML = myObj.age;
+document.getElementById("city").innerHTML = myObj.city;
+
+</script>
+
+</body>
+</html>

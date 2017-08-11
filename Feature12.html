@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/1.2.1/lodash.min.js"></script>
+<script>
+var data = [{
+  medicine: 1234,
+  info: "blabla"
+}, {
+  medicine: 9585,
+  info: "blabla"
+}];
+
+dataMedicines = _.map(data).map(function(x) {
+  return _.assign(x, {
+    medicine: x.medicine.toString()
+  });
+});
+
+console.log(dataMedicines);
+</script>
+</head>
+<body>
+</body>
+</html>

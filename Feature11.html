@@ -2,41 +2,24 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js "></script>
 </head>
 <body>
 <table>
 	<tr>
 		<td>
-			Name
-		</td>
-		<td>
-			:
-		</td>
-		<td>
-			<input type="text" name="textName" onfocus="myFunction(this)" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Hobby
-		</td>
-		<td>
-			:
-		</td>
-		<td>
-			<input type="text" name="textInput1" />
-		</td>
-	</tr>
-	<tr>
-		<td colspan="3" style="text-align:right">
-			<input type="submit" id="sbmtValue" value="Submit" />
+			<input type="button" id="aaa" value="Click for Count" />
 		</td>
 	</tr>
 </table>
 <script>
-function myFunction(x) {
-    x.disabled = true;
-}
+$('#aaa').click(function() {
+    var aaa =  $(this);
+    aaa.prop('disabled', true);
+    setTimeout(function() {
+        aaa.prop('disabled', false);
+    }, 3000);
+});
 </script>
 </body>
 </html>

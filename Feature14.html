@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $("p").hide(1000, function(){
-            alert("This notification appear after hidden process done. This is using callback function");
-        });
-    });
-});
-</script>
+	<script type="text/javascript">
+		function greeting(name, age) {
+		  alert('Hello ' + name + '. Your age is ' + age);
+		}
+
+		function processUserInput(callback) {
+		  var name = prompt('Please enter your name.');
+		  var age = prompt('Please enter your age.');
+		  callback(name, age);
+		}
+
+		processUserInput(greeting);
+	</script>
 </head>
 <body>
 
-<button>Hide</button>
-
-<p>This is an example for callback function using javascript </p>
-
 </body>
 </html>
+

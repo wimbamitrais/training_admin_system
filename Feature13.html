@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function testPromise() {
+				var bool = false;
+				var promise = new Promise(function (resolve, reject){
+					if(bool){
+				  		resolve("Stuff worked!");
+					}
+					else {
+						reject(new Error("It broke"));
+					}
+				});
+
+				promise.then(function(result) {
+				  	document.getElementById("demo").innerHTML = result;
+				  	console.log(result); // "Stuff worked!"
+				}, function(err) {
+					document.getElementById("demo").innerHTML = err;
+				  	console.log(err); // Error: "It broke"
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<p>
+		<input type="button" onclick="testPromise()" value="Test Promise">
+		</p>
+
+		<p id="demo"></p>
+	</body>
+</html>

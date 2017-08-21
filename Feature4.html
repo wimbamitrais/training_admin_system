@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.ajax({url: "demo_test.txt", success: function(result){
+            $("#div1").html(result);
+        }});
+    });
+});
+</script>
+</head>
 <body>
 
-<h1>The XMLHttpRequest Object</h1>
+<div id="div1"><h2>Ajax Request Example</h2></div>
 
-<button type="button" onclick="loadDoc()">Request data</button>
-
-<p id="demo"></p>
-
-
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "https://www.w3schools.com/xml/demo_get.asp", true);
-  xhttp.send();
-}
-</script>
+<button>Get External Content</button>
 
 </body>
 </html>

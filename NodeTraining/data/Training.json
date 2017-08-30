@@ -1,0 +1,62 @@
+[
+  {
+    "firstName": "Ibnu",
+    "lastName": "Prayogi",
+    "email": "ibnuprayogi@gmail.com",
+    "Status": "active"
+  },
+  {
+    "firstName": "Billy",
+    "lastName": "Hartanto",
+    "email": "billyhartanto@gmail.com",
+    "Status": "inactive"
+  },
+  {
+    "firstName": "Deny",
+    "lastName": "Sufriawan",
+    "email": "denysufriawan@gmail.com",
+    "Status": "active"
+  },
+  {
+    "firstName": "I Gede",
+    "lastName": "Wisesa",
+    "email": "wisesagede@gmail.com",
+    "Status": "inactive"
+  },
+  {
+    "firstName": "Daniel",
+    "lastName": "Muliawan",
+    "email": "danielmuliawan@gmail.com",
+    "Status": "active"
+  },
+  {
+    "firstName": "Sopyan",
+    "lastName": "Mulyana",
+    "email": "sopyanmulyana@gmail.com",
+    "Status": "inactive"
+  },
+  {
+    "firstName": "Yuliawan",
+    "lastName": "syafaat",
+    "email": "yuliawansyafaat@gmail.com",
+    "Status": "active"
+  },
+  {
+    "firstName": "Inez",
+    "lastName": "Fiona",
+    "email": "inezfiona@gmail.com",
+    "Status": "inactive"
+  },
+  {
+    "firstName": "Wimba",
+    "lastName": "Agra",
+    "email": "wimbaagra@gmail.com",
+    "Status": "active"
+  },
+  {
+    "firstName": "Taufik",
+    "lastName": "Andrian",
+    "email": "taufikandrian@gmail.com",
+    "Status": "inactive"
+  }
+]

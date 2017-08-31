@@ -32,6 +32,6 @@ export class TableListComponent implements OnInit {
   
   gotoDetail(user: User): void {
     this.selectedUser = user;
-    this.router.navigate(['/users', this.selectedUser.id]);
+    this.router.navigate(['/home/users', this.selectedUser.id]);
   }
 }

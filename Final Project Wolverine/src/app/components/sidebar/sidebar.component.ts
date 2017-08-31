@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'angular2-cookie/core'
 
 declare const $: any;
 declare interface RouteInfo {
@@ -30,11 +31,13 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
   currentUser;
-  constructor() { }
+
+  constructor(private cookieService: CookieService) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
-    this.currentUser = JSON.parse(localStorage.getItem ('currentUser'));
+    this.currentUser = JSON.parse(this.cookieService.get('loginData'));
+    
   }
   isMobileMenu() {
       if ($(window).width() > 991) {

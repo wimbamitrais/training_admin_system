@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import {CookieService} from 'angular2-cookie/core';
+
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
@@ -59,6 +61,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
     AuthGuard,
     AlertService,
     AuthenticationService,
+    CookieService
   ],
   bootstrap: [
     AppComponent

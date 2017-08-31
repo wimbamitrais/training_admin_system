@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'angular2-cookie/core'
+import { CookieService } from 'angular2-cookie/core';
+import { Router } from '@angular/router';
+
+import { AuthenticationService } from '../../services/index'
 
 declare const $: any;
 declare interface RouteInfo {
@@ -32,12 +35,16 @@ export class SidebarComponent implements OnInit {
   menuItems: any[];
   currentUser;
 
-  constructor(private cookieService: CookieService) { }
+  constructor(private cookieService: CookieService, private router:Router, private authenticationService:AuthenticationService) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
-    this.currentUser = JSON.parse(this.cookieService.get('loginData'));
-    
+    if (this.cookieService.get('currentUser')){
+        this.currentUser = JSON.parse(this.cookieService.get('currentUser'));
+    } else { 
+        this.router.navigate(['/login']) 
+        alert("You are not logged in!");
+    };
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
@@ -45,4 +52,9 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+
+    logout(){
+        this.authenticationService.logout();
+        this.router.navigate(['/login']);
+    }   
 }

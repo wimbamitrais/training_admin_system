@@ -4,7 +4,5 @@ import { Component, OnInit } from '@angular/core';
     selector: 'my-period',
     templateUrl: './period.component.html'
 })
-
 export class PeriodComponent{
-
 }

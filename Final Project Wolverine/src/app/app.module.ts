@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
-
 import { HomeComponent } from './home/home.component'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -33,6 +32,9 @@ import { AuthGuard } from './guards/authguard.component'
 // For PBI 7 Angular 2
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+
+import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
     RouterModule,
     AppRoutingModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    NguiDatetimePickerModule
   ],
   providers: [
     UserService,

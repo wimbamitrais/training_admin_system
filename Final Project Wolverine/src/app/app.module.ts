@@ -25,6 +25,13 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { PeriodComponent } from './period/period.component'
 import { ListPeriodComponent } from './period/listPeriod/listPeriod.component'
 import { CreatePeriodComponent } from './period/createPeriod/createPeriod.component'
+import { EditPeriodComponent } from './period/editPeriod/editPeriod.component';
+import { SchedulePeriodComponent } from './period/schedulePeriod/schedulePeriod.component';
+import { EligibleParticipantPeriodComponent } from './period/eligibleParticipantPeriod/eligibleParticipantPeriod.component';
+
+import { EnrollmentComponent } from './enrollment/enrollment.component'
+import { ListEnrollmentComponent } from './enrollment/listEnrollment/listEnrollment.component'
+import { DetailEnrollmentComponent } from './enrollment/detailEnrollment/detailEnrollment.component'
 
 import { UserService, AuthenticationService, AlertService } from './services/index' ;
 import { AuthGuard } from './guards/authguard.component'
@@ -53,7 +60,13 @@ import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
     HomeComponent,
     PeriodComponent,
     ListPeriodComponent,
-    CreatePeriodComponent
+    CreatePeriodComponent,
+    EditPeriodComponent,
+    SchedulePeriodComponent,
+    EligibleParticipantPeriodComponent,
+    EnrollmentComponent,
+    ListEnrollmentComponent,
+    DetailEnrollmentComponent
   ],
   imports: [
     BrowserModule,

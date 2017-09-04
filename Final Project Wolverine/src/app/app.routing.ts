@@ -20,6 +20,13 @@ import { HomeComponent } from './home/home.component';
 import { PeriodComponent } from './period/period.component';
 import { ListPeriodComponent } from './period/listPeriod/listPeriod.component';
 import { CreatePeriodComponent } from './period/createPeriod/createPeriod.component';
+import { EditPeriodComponent } from './period/editPeriod/editPeriod.component';
+import { SchedulePeriodComponent } from './period/schedulePeriod/schedulePeriod.component';
+import { EligibleParticipantPeriodComponent } from './period/eligibleParticipantPeriod/eligibleParticipantPeriod.component';
+
+import { EnrollmentComponent } from './enrollment/enrollment.component'
+import { ListEnrollmentComponent } from './enrollment/listEnrollment/listEnrollment.component'
+import { DetailEnrollmentComponent } from './enrollment/detailEnrollment/detailEnrollment.component'
 
 import { AuthGuard } from './guards/authguard.component';
 
@@ -33,10 +40,16 @@ const routes: Routes =[
       { path: 'period', component: PeriodComponent, children:[
         { path: 'listPeriod', component: ListPeriodComponent},
         { path: 'createPeriod', component: CreatePeriodComponent},
-        // { path: 'editPeriod', component: EditPeriodComponent},
-        // { path: 'scedulePeriod', component: SchedulePeriodComponent},
-        // { path: 'eligibleParticipantPeriod', component: eligibleParticipantPeriodComponent},
+        { path: 'editPeriod', component: EditPeriodComponent},
+        { path: 'schedulePeriod', component: SchedulePeriodComponent},
+        { path: 'eligibleParticipantPeriod', component: EligibleParticipantPeriodComponent},
         { path: '', redirectTo: 'listPeriod', pathMatch:'full'},
+      ]},
+
+      { path: 'enrollment', component: EnrollmentComponent, children: [
+        { path: 'list', component:ListEnrollmentComponent},
+        { path: 'detail', component:DetailEnrollmentComponent},
+        { path: '', redirectTo:'list', pathMatch:'full'}
       ]},
 
       { path: 'user-profile',   component: UserProfileComponent },

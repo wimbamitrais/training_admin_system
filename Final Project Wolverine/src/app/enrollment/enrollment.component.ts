@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';  
-import { CookieService } from 'angular2-cookie/core';
+import { Component } from '@angular/core';  
 
 @Component({
     selector: 'my-enrollment',
@@ -7,11 +6,6 @@ import { CookieService } from 'angular2-cookie/core';
     styleUrls: ['./enrollment.component.css']
 })
 
-export class PeriodComponent implements OnInit{
+export class EnrollmentComponent {
 
-    constructor() {}
-
-    ngOnInit(){
-
-    }
 }

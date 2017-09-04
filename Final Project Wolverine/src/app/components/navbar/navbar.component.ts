@@ -57,14 +57,14 @@ export class NavbarComponent implements OnInit {
       if(titlee.charAt(0) === '#'){
           titlee = titlee.slice( 2 );
       }
-      titlee = titlee.split('/').pop();
+      titlee = titlee.split('/')[2];
 
-      for(var item = 0; item < this.listTitles.length; item++){
-          if(this.listTitles[item].path === titlee){
-              return this.listTitles[item].title;
-          }
-      }
-      return 'Dashboard';
+    //   for(var item = 0; item < this.listTitles.length; item++){
+    //       if(this.listTitles[item].path === titlee){
+    //           return this.listTitles[item].title;
+    //       }
+    //   }
+      return titlee.toUpperCase();
     }
 
     logout(){

@@ -15,8 +15,11 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component'
-import { PeriodComponent } from './period/period.component'
+import { HomeComponent } from './home/home.component';
+
+import { PeriodComponent } from './period/period.component';
+import { ListPeriodComponent } from './period/listPeriod/listPeriod.component';
+import { CreatePeriodComponent } from './period/createPeriod/createPeriod.component';
 
 import { AuthGuard } from './guards/authguard.component';
 
@@ -27,7 +30,15 @@ const routes: Routes =[
     { path: 'home', component: HomeComponent, 
     children: [
       { path: 'dashboard', component: DashboardComponent  },
-      { path: 'period', component: PeriodComponent  },
+      { path: 'period', component: PeriodComponent, children:[
+        { path: 'listPeriod', component: ListPeriodComponent},
+        { path: 'createPeriod', component: CreatePeriodComponent},
+        // { path: 'editPeriod', component: EditPeriodComponent},
+        // { path: 'scedulePeriod', component: SchedulePeriodComponent},
+        // { path: 'eligibleParticipantPeriod', component: eligibleParticipantPeriodComponent},
+        { path: '', redirectTo: 'listPeriod', pathMatch:'full'},
+      ]},
+
       { path: 'user-profile',   component: UserProfileComponent },
       { path: 'users',     component: TableListComponent },
       { path: 'typography',     component: TypographyComponent },

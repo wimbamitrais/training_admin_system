@@ -22,7 +22,10 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component'
 import { UserDetailComponent } from './user-detail/user-detail.component';
+
 import { PeriodComponent } from './period/period.component'
+import { ListPeriodComponent } from './period/listPeriod/listPeriod.component'
+import { CreatePeriodComponent } from './period/createPeriod/createPeriod.component'
 
 import { UserService, AuthenticationService, AlertService } from './services/index' ;
 import { AuthGuard } from './guards/authguard.component'
@@ -46,7 +49,9 @@ import { InMemoryDataService }  from './in-memory-data.service';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    PeriodComponent
+    PeriodComponent,
+    ListPeriodComponent,
+    CreatePeriodComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
 @Component({
@@ -8,19 +8,19 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 })
 export class AppComponent implements OnInit {
 
+  login = false;
+
   constructor(public location: Location) {}
 
   ngOnInit() {
+    if (localStorage.getItem('currentUser')) {
+      // logged in so return true
+      this.login = true;
+    }
   }
 
-    isMaps(path){
-      var titlee = this.location.prepareExternalUrl(this.location.path());
-      titlee = titlee.slice( 1 );
-      if(path == titlee){
-        return false;
-      }
-      else {
-        return true;
-      }
-    }
+  isLogin():boolean{
+    return this.login;
+  }
+
 }

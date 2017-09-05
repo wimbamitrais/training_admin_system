@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header" data-background-color="red">
+                    <div class="card-header" data-background-color="purple">
                         <h4 class="title">User List</h4>
                         <p class="category">Click the button to see user's detail. </p>
                     </div>
@@ -24,7 +24,7 @@
                                     <td>{{ user.id }}</td>
                                     <td>{{ user.name }}</td>
                                     <td>{{ user.email }}</td>
-                                    <td><button (click)="gotoDetail(user)" class="btn btn-danger btn-sm margin=-30px">Detail</button></td>
+                                    <td><button (click)="gotoDetail(user)" class="btn btn-primary btn-sm margin=-30px">Detail</button></td>
                                 </tr>
                             </tbody>
                         </table>

@@ -28,6 +28,8 @@ export class UserService {
   constructor(private http:Http){}
 
   // getUsers(): Promise<User[]> {
+  //   console.log(this.http.get(this.usersUrl));
+    
   //   return this.http.get(this.usersUrl)
   //   .toPromise()
   //   .then(response => response.json().data as User[])

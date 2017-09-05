@@ -12,6 +12,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 17,  name: 'Data 8 from api', email: 'data8@email.com' },
       { id: 18,  name: 'Data 9 from api', email: 'data9email.com' },
       { id: 19,  name: 'Data 10 from api', email: 'data10@email.com' },
+      { id: 20,  name: 'wimbaagra', email:'wimbaagra'}
     ];
     return {users};
   }

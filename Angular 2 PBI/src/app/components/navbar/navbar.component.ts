@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { Router } from '@angular/router'
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { AuthenticationService} from '../../services/index'
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +15,7 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef) {
+    constructor(location: Location,  private element: ElementRef, private router:Router, private authenticationService:AuthenticationService) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -55,13 +57,18 @@ export class NavbarComponent implements OnInit {
       if(titlee.charAt(0) === '#'){
           titlee = titlee.slice( 2 );
       }
-      titlee = titlee.split('/').pop();
+      titlee = titlee.split('/')[2];
 
-      for(var item = 0; item < this.listTitles.length; item++){
-          if(this.listTitles[item].path === titlee){
-              return this.listTitles[item].title;
-          }
-      }
-      return 'Dashboard';
+    //   for(var item = 0; item < this.listTitles.length; item++){
+    //       if(this.listTitles[item].path === titlee){
+    //           return this.listTitles[item].title;
+    //       }
+    //   }
+      return titlee.toUpperCase();
+    }
+
+    logout(){
+        this.authenticationService.logout();
+        this.router.navigate(['/login']);
     }
 }

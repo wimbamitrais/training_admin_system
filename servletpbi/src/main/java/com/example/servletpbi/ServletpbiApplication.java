@@ -18,11 +18,10 @@ public class ServletpbiApplication implements CommandLineRunner{
 		SpringApplication.run(ServletpbiApplication.class, args);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void run(String... arg0) throws Exception {
 		for (int i = 0; i < 5; i++) {
-			scheduleRepository.save(new Schedule ("Topic #" + (i+1), new Date(System.currentTimeMillis())));
+			scheduleRepository.save(new Schedule ("Topic #" + (i+1), "2017-05-12"));
 		}
 	}
 }

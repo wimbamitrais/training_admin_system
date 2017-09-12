@@ -3,6 +3,7 @@ package com.example.servletpbi.controller;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.servletpbi.Schedule;
 import com.example.servletpbi.ScheduleRepository;
 
-@RestController
+@Controller
 @RequestMapping ("/schedule")
 
 public class ScheduleController {
@@ -22,26 +23,43 @@ public class ScheduleController {
 	@Autowired
 	private ScheduleRepository scheduleRepository;
 	
+//	@RequestMapping(value = "", method=RequestMethod.GET) 
+//	public ModelAndView findAll(Model model){
+//		model.addAttribute("schedule", scheduleRepository.findAll());
+//		return new ModelAndView("redirect:/schedule");
+//	}
+
+	@RequestMapping(value = "", method=RequestMethod.GET) 
+	public ModelAndView root(){
+		return new ModelAndView("redirect:/schedule/all");
+	}
+	
 	@RequestMapping(value = "/all", method=RequestMethod.GET) 
 	public String findAll(Model model){
 		model.addAttribute("schedule", scheduleRepository.findAll());
-		return "schedule/list";
+		return "schedules/list";
 	}
 	
 	@RequestMapping (value = "/new", method = RequestMethod.GET)
 	public String newProject (){
-		return "schedule/new"; 
+		return "schedules/new"; 
 	}
 	
 	@RequestMapping (value = "/create", method = RequestMethod.POST)
 	public ModelAndView create (@RequestParam("topic") String topic, 
-								@RequestParam("date") Date date) {
-		scheduleRepository.save(new Schedule (topic,date));
+								@RequestParam("date") String date) {
+		scheduleRepository.save(new Schedule (topic, date));
+		return new ModelAndView("redirect:/schedule/all");
+	}
+	
+	@RequestMapping (value = "/{id}/delete", method = RequestMethod.GET)
+	public ModelAndView delete (@PathVariable long id) {
+		scheduleRepository.delete(id);
 		return new ModelAndView("redirect:/schedule");
 	}
 		
 	@RequestMapping (value = "/update", method = RequestMethod.POST)
-	public ModelAndView update (@RequestParam("schedule_id") long id,
+	public ModelAndView update (@RequestParam("id") long id,
 								@RequestParam("topic") String topic,
 								@RequestParam("date") String date) {
 		Schedule schedule = scheduleRepository.findOne(id);
@@ -54,7 +72,7 @@ public class ScheduleController {
 	public String edit (@PathVariable long id, Model model) {
 		Schedule schedule = scheduleRepository.findOne(id);
 		model.addAttribute("schedule", schedule);
-		return "schedule/edit";
+		return "schedules/edit";
 	}
 	
 }

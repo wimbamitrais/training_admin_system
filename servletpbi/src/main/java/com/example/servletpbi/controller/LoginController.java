@@ -18,7 +18,7 @@ public class LoginController {
 	@RequestMapping(value = "", method=RequestMethod.POST)
     public ModelAndView create(@RequestParam("username") String u, @RequestParam("password") String p) {
         if(u.equals("admin") && p.equals("admin")) {
-        	return new ModelAndView("redirect:/dashboard");
+        	return new ModelAndView("redirect:/schedule");
         } else {
         	return new ModelAndView("redirect:/login");
         }

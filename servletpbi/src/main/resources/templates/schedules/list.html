@@ -1,0 +1,41 @@
+<html layout:decorator="layout">
+
+<div layout:fragment="content">
+
+<a class="btn btn-primary" href="/schedule/new">Add new post</a>
+
+<table class="table table-stripped" id="schedule_list">
+	<thead>
+		<tr>
+			<th>Topic</th>
+			<th>Date</th>
+			<th>Action</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-th-each="schedule: ${schedule}">
+			<td class="topic" data-th-text="${schedule.topic}"></td>
+			
+			<td class="topic" data-th-text="${schedule.date}"></td>
+			
+			<td>
+				<a th:href="@{'{id}/delete'(id=${schedule.id})}" class="delete" th:attr="name=${schedule.topic}">
+					<span class="fa-stack">
+						<i class="glyphicon glyphicon-trash"></i>
+					</span>
+				</a>
+			</td>
+			
+			<td>
+				<a th:href="@{'{id}/edit'(id=${schedule.id})}" class="delete" th:attr="name=${schedule.topic}">
+					<span class="fa-stack">
+						<i class="glyphicon glyphicon-edit"></i>
+					</span>
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</html>

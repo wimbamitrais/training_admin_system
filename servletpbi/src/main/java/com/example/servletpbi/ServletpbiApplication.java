@@ -22,6 +22,7 @@ public class ServletpbiApplication implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		for (int i = 0; i < 5; i++) {
 			scheduleRepository.save(new Schedule ("Topic #" + (i+1), "2017-05-12"));
+			
 		}
 	}
 }

@@ -1,6 +1,7 @@
 package com.example.servletpbi.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -64,6 +65,7 @@ public class ScheduleController {
 								@RequestParam("date") String date) {
 		Schedule schedule = scheduleRepository.findOne(id);
 		schedule.setTopic(topic);
+		schedule.setDate(date);
 		scheduleRepository.save(schedule);
 		return new ModelAndView("redirect:/schedule");
 	}
@@ -75,4 +77,10 @@ public class ScheduleController {
 		return "schedules/edit";
 	}
 	
+	@RequestMapping (value = "/search", method = RequestMethod.GET)
+	public String find (@RequestParam ("keyword") String keyword, Model model) {
+		model.addAttribute("schedule", scheduleRepository.findByTopicIgnoreCaseContaining(keyword));
+		return "schedules/list";
+	}
+
 }

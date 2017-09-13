@@ -1,8 +1,5 @@
 package com.example.servletpbi.controller;
 
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.servletpbi.Schedule;
@@ -23,12 +19,6 @@ public class ScheduleController {
 	
 	@Autowired
 	private ScheduleRepository scheduleRepository;
-	
-//	@RequestMapping(value = "", method=RequestMethod.GET) 
-//	public ModelAndView findAll(Model model){
-//		model.addAttribute("schedule", scheduleRepository.findAll());
-//		return new ModelAndView("redirect:/schedule");
-//	}
 
 	@RequestMapping(value = "", method=RequestMethod.GET) 
 	public ModelAndView root(){

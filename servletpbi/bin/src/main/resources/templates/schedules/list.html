@@ -1,0 +1,55 @@
+<html layout:decorator="layout">
+
+<div layout:fragment="content">
+
+
+<a class="btn btn-primary" href="/schedule/new">Add new Schedule</a>
+
+<form method="get" class="block" name="search_form" id="search_form" action="/schedule/search" role="form">
+  <div class="col-lg-8">
+  </div>
+  <div class="col-lg-4">
+    <div class="input-group">
+      <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Search for..."/>
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="submit" id="submit">Search</button>
+	      </span> 
+     </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</form>
+
+<table class="table table-stripped">
+	<thead>
+		<tr>
+			<th>Topic</th>
+			<th>Date</th>
+			<th>Action</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-th-each="schedule: ${schedule}">
+			<td class="topic" data-th-text="${schedule.topic}"></td>
+			
+			<td class="topic" data-th-text="${schedule.date}"></td>
+			
+			<td>
+				<a th:href="@{'{id}/delete'(id=${schedule.id})}" class="delete" th:attr="name=${schedule.topic}">
+					<span class="fa-stack">
+						<i class="glyphicon glyphicon-trash"></i>
+					</span>
+				</a>
+			</td>
+			
+			<td>
+				<a th:href="@{'{id}/edit'(id=${schedule.id})}" class="delete" th:attr="name=${schedule.topic}">
+					<span class="fa-stack">
+						<i class="glyphicon glyphicon-edit"></i>
+					</span>
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</html>

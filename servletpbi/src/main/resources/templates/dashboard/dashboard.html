@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Dashboard Page</title>
-</head>
-<body>
-	
-</body>
+<html layout:decorator="layout">
+    <div layout:fragment="content">
+    	<h3>Menu :</h3>
+        <form method="get" name="comment_form" id="comment_form" action="/dashboard/user" role="form">
+            <button type="submit" id="submit" class="btn btn-primary">User</button>
+        </form>
+        <br/>
+        <form method="get" name="comment_form" id="comment_form" action="/dashboard/schedule" role="form">
+            <button type="submit" id="submit" class="btn btn-primary">Schedule</button>
+        </form>
+    </div>
 </html>

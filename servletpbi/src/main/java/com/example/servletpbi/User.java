@@ -11,8 +11,18 @@ public class User {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String username;
-	private String password;
+	private String fullName;
+	private String email;
+	private String grade;
+	
+	public User(){
+    }
+
+    public User(String f, String e, String g){
+        this.fullName = f;
+        this.email = e;
+        this.grade = g;
+    }
 	
 	public Long getId() {
 		return id;
@@ -22,20 +32,30 @@ public class User {
 		this.id = id;
 	}
 	
-	public String getUsername() {
-		return username;
+	public String getFullName() {
+		return fullName;
 	}
 	
-	public void setUsername(String username) {
-		this.username = username;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	
-	public String getPassword() {
-		return password;
+	public String getEmail() {
+		return email;
 	}
 	
-	public void setPassword(String password) {
-		this.password = password;
+	public void setEmail(String email) {
+		this.email = email;
 	}
+	
+	public String getGrade() {
+		return grade;
+	}
+	
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	
+	
 
 }
